@@ -13,3 +13,5 @@ workflows:
   build_and_test:
     jobs:
       - build_and_test
+      - store_test_results:
+        path: test-results
