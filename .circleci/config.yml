@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout 
       - run: npm install 
-      - run: npm test > test-results.txt 
+      - run: npm test 2>&1 | tee test-results.txt
       - store_artifacts:
           path: test-results.txt
 
