@@ -8,10 +8,12 @@ jobs:
       - checkout # Check out your code from the repository
       - run: npm install # Install your project dependencies (assuming you're using npm)
       - run: npm test # Run your tests (assuming you've set up your test script in your `package.json`)
+      - store_test_results:
+          path: test-results
+
 
 workflows:
   build_and_test:
     jobs:
       - build_and_test
-      - store_test_results:
-          path: test-results
+
