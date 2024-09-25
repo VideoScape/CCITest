@@ -3,13 +3,13 @@ version: 2.1
 jobs:
   build_and_test:
     docker:
-      - image: cimg/node:lts # Use a Node.js Docker image for your build environment
+      - image: cimg/node:lts 
     steps:
-      - checkout # Check out your code from the repository
-      - run: npm install # Install your project dependencies (assuming you're using npm)
-      - run: npm test # Run your tests (assuming you've set up your test script in your `package.json`)
+      - checkout 
+      - run: npm install 
+      - run: npm test > test-results.txt 
       - store_test_results:
-          path: results.xml
+          path: test-results.txt
 
 
 workflows:
