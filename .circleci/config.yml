@@ -8,7 +8,7 @@ jobs:
       - checkout 
       - run: npm install 
       - run: npm test > test-results.txt 
-      - store_test_results:
+      - store_artifacts:
           path: test-results.txt
 
 
